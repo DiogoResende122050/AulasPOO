@@ -1,7 +1,7 @@
 import java.io.File
 import java.util.*
 
-/*class Livraria {
+class Livraria {
     private val livros = mutableListOf<Livro>()
     private val funcionarios = mutableListOf<Funcionario>()
 
@@ -110,4 +110,3 @@ import java.util.*
         }
     }
 }
-*/
