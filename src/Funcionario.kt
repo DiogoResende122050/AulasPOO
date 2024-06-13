@@ -1,4 +1,3 @@
-// Funcionario.kt
 open class Funcionario(val nome: String, val cargo: String) {
     open fun apresentar() {
         println("Nome: $nome, Cargo: $cargo")

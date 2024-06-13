@@ -109,4 +109,42 @@ class Livraria {
             println("${funcionario.nome}, ${funcionario.cargo}")
         }
     }
+
+    // Adicionando as funções de apagar livros e funcionários
+
+    fun apagarLivro(titulo: String) {
+        val iterator = livros.iterator()
+        var livroRemovido = false
+        while (iterator.hasNext()) {
+            val livro = iterator.next()
+            if (livro.titulo.equals(titulo, ignoreCase = true)) {
+                iterator.remove()
+                livroRemovido = true
+                println("Livro \"$titulo\" removido com sucesso.")
+                break
+            }
+        }
+        if (!livroRemovido) {
+            println("Livro \"$titulo\" não encontrado.")
+        }
+        salvarLivrosCSV("data/livros.csv")
+    }
+
+    fun apagarFuncionario(nome: String) {
+        val iterator = funcionarios.iterator()
+        var funcionarioRemovido = false
+        while (iterator.hasNext()) {
+            val funcionario = iterator.next()
+            if (funcionario.nome.equals(nome, ignoreCase = true)) {
+                iterator.remove()
+                funcionarioRemovido = true
+                println("Funcionário \"$nome\" removido com sucesso.")
+                break
+            }
+        }
+        if (!funcionarioRemovido) {
+            println("Funcionário \"$nome\" não encontrado.")
+        }
+        salvarFuncionariosCSV("data/funcionarios.csv")
+    }
 }

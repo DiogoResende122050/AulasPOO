@@ -78,7 +78,9 @@ fun main() {
             println("4. Listar todos os livros")
             println("5. Listar funcionários")
             println("6. Adicionar livros ao Stock")
-            println("7. Sair como administrador")
+            println("7. Apagar livro")
+            println("8. Apagar funcionário")
+            println("9. Sair como administrador")
             print("Opção: ")
 
             when (scanner.nextInt()) {
@@ -118,6 +120,18 @@ fun main() {
                     livraria.adicionarCopiasLivro(tituloLivroAdicionarCopias, quantidadeAdicionarCopias)
                 }
                 7 -> {
+                    println("Digite o título do livro que deseja apagar:")
+                    scanner.nextLine() // Consumir a quebra de linha pendente
+                    val tituloLivroApagar = readln()
+                    livraria.apagarLivro(tituloLivroApagar)
+                }
+                8 -> {
+                    println("Digite o nome do funcionário que deseja apagar:")
+                    scanner.nextLine() // Consumir a quebra de linha pendente
+                    val nomeFuncionarioApagar = readln()
+                    livraria.apagarFuncionario(nomeFuncionarioApagar)
+                }
+                9 -> {
                     isAdmin = false
                     println("Saiu como administrador.")
                 }
